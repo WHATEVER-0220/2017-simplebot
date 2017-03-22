@@ -8,6 +8,8 @@ import org.frc5687.steamworks.simplebot.subsystems.DriveTrain;
 public class Robot extends IterativeRobot  {
 
     public static Robot robot;
+    public static OI oi;
+
     private Command autoCommand;
 
     public static DriveTrain driveTrain;
@@ -25,6 +27,8 @@ public class Robot extends IterativeRobot  {
         robot = this;
 
         driveTrain = new DriveTrain();
+
+        oi = new OI();
     }
 
     @Override

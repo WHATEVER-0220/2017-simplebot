@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.frc5687.steamworks.simplebot.Constants;
 import org.frc5687.steamworks.simplebot.RobotMap;
+import org.frc5687.steamworks.simplebot.commands.DriveWith2Joysticks;
 
 /**
  * Created by Baxter on 3/22/2017.
@@ -24,6 +25,7 @@ public class DriveTrain extends Subsystem {
 
     @Override
     protected void initDefaultCommand() {
+        setDefaultCommand(new DriveWith2Joysticks());
     }
 
     public void tankDrive(double leftSpeed, double rightSpeed) {
