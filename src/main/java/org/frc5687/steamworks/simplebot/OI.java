@@ -19,11 +19,20 @@ public class OI {
     }
 
     public double getLeftSpeed() {
-        return gamepad.getRawAxis(ButtonNumbers.LEFT_AXIS);
+        return getSpeedFromAxis(ButtonNumbers.LEFT_AXIS);
     }
 
     public double getRightSpeed() {
-        return gamepad.getRawAxis(ButtonNumbers.RIGHT_AXIS);
+        return getSpeedFromAxis(ButtonNumbers.RIGHT_AXIS);
+    }
+
+    private double getSpeedFromAxis(int axisNumber) {
+        double raw = gamepad.getRawAxis(axisNumber);
+        return applyDeadband(raw, Constants.DriveTrain.DEADBAND);
+    }
+
+    private double applyDeadband(double value, double deadband) {
+        return Math.abs(value) >= deadband ? value : 0;
     }
 
 }
