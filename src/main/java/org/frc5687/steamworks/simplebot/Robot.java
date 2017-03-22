@@ -3,11 +3,14 @@ package org.frc5687.steamworks.simplebot;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import org.frc5687.steamworks.simplebot.subsystems.DriveTrain;
 
 public class Robot extends IterativeRobot  {
 
     public static Robot robot;
     private Command autoCommand;
+
+    public static DriveTrain driveTrain;
 
     public Robot() {
     }
@@ -21,6 +24,7 @@ public class Robot extends IterativeRobot  {
     public void robotInit() {
         robot = this;
 
+        driveTrain = new DriveTrain();
     }
 
     @Override
